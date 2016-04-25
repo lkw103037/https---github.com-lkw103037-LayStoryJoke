@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+    <com.lab.joke.view.custom.TitleView xmlns:story="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title"
+        story:functionText="@string/publish" />
+
+    <View style="@style/LineHorizontal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_item"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="试听 00:00/00:19" />
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <!-- 选择标签 -->
+            <!-- 同步第三方平台 -->
+            <!-- 想叫谁听 -->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

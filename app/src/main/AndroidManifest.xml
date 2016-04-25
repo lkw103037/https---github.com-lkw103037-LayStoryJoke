@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lab.joke">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.pengtx.wonderworld.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FIFESSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="androd.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="androd.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".Joke"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+
+        <!-- 54b61888fd98c598da00093b -->
+        <!-- 5546e56167e58e6567004648 美妙世界 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="" />
+
+        <!-- UMENG渠道号 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="CHANNEL_SELF" />
+
+        <!-- 百度地图 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="" />
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="" />
+
+        <!-- </>值来自开发者平台取得的AppKey -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="" />
+
+        <!-- 欢迎页面 -->
+        <activity
+            android:name=".view.ui.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 发布录音界面 -->
+        <activity
+            android:name=".view.ui.joke.PublishRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 发不语音界面 -->
+        <activity
+            android:name=".view.ui.joke.PublishSpeechActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 发布文字界面 -->
+        <activity
+            android:name=".view.ui.joke.PublishTextActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 发布确认界面 -->
+        <activity
+            android:name=".view.ui.joke.PublishConfirmActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- JPush Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.pengtx.wonderworld" />
+            </intent-filter>
+        </activity>
+
+        <!-- 百度定位 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <!-- JPush Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- JPush Required SDK 核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- 下载服务 -->
+        <service android:name=".service.DownloadService" />
+
+        <!-- JPush Required SDK核心功能 android:process=":jpush" -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <!-- Required  显示通知栏 -->
+                <category android:name="com.pengtx.wonderworld" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- JPush Required SDK核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".receiver.JPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.pengtx.wonderworld" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".view.ui.user.SettingActivity"
+            android:label="@string/title_activity_my" />
+        <activity
+            android:name=".view.ui.user.MessageActivity"
+            android:label="@string/title_activity_message" />
+        <activity
+            android:name=".view.ui.user.UserInfoActivity"
+            android:label="@string/title_activity_user_info" />
+        <activity
+            android:name=".view.ui.user.FavActivity"
+            android:label="@string/title_activity_fav"
+            android:parentActivityName=".view.base.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lab.joke.view.base.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".view.ui.user.PublishActivity"
+            android:label="@string/title_activity_publish"
+            android:parentActivityName=".view.base.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lab.joke.view.base.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".view.ui.user.CoverActivity"
+            android:label="@string/title_activity_cover"
+            android:parentActivityName=".view.base.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lab.joke.view.base.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".view.ui.user.HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".view.base.BaseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lab.joke.view.base.BaseActivity" />
+        </activity>
+        <activity
+            android:name=".view.ui.joke.JokeDetailActivity"
+            android:label="@string/title_activity_joke_detail"></activity>
+    </application>
+
+</manifest>

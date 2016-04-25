@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RadioGroup xmlns:story="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item"
+        android:background="@color/main"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.lab.joke.view.custom.SRadioButton
+            android:id="@+id/srb_new"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/story_new"
+            android:textColor="@drawable/tab_story_font_color"
+            android:textSize="@dimen/font_normal" />
+
+        <com.lab.joke.view.custom.SRadioButton
+            android:id="@+id/srb_hot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/story_hot"
+            android:textColor="@drawable/tab_story_font_color"
+            android:textSize="@dimen/font_normal" />
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_story"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</LinearLayout>

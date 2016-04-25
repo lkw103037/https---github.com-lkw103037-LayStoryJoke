@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+    <com.lab.joke.view.custom.TitleView xmlns:story="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item"
+        story:functionText="@string/next" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:maxLines="15"
+        android:minLines="15" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加图片" />
+
+
+</LinearLayout>

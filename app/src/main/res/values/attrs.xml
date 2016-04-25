@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="tabImg">
+        <attr name="img" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="titleView">
+        <attr name="leftImg" format="reference|color" />
+        <attr name="titleText" format="reference|string" />
+        <attr name="functionText" format="reference|string" />
+    </declare-styleable>
+
+</resources>

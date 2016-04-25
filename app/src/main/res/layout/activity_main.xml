@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/height_item" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_item"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View style="@style/LineHorizontal" />
+
+            <RadioGroup xmlns:story="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rg_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_item"
+                android:layout_marginTop="2dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <com.lab.joke.view.custom.SRadioButton
+                    android:id="@+id/srb_story"
+                    style="@style/TabNav"
+                    android:text="@string/home_story"
+                    story:img="@drawable/tab_story" />
+
+                <com.lab.joke.view.custom.SRadioButton
+                    android:id="@+id/srb_publish"
+                    style="@style/TabNav"
+                    android:text="@string/home_publish"
+                    story:img="@drawable/tab_publish" />
+
+                <com.lab.joke.view.custom.SRadioButton
+                    android:id="@+id/srb_friends"
+                    style="@style/TabNav"
+                    android:text="@string/home_friends"
+                    story:img="@drawable/tab_friends" />
+
+                <com.lab.joke.view.custom.SRadioButton
+                    android:id="@+id/srb_my"
+                    style="@style/TabNav"
+                    android:text="@string/home_my"
+                    story:img="@drawable/tab_my" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

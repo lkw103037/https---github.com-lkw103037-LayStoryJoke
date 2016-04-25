@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- #f5f4f2 -->
+    <color name="bg_activity">@color/white</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black_dark_overlay">#99000000</color>
+    <color name="overlay_white">#E6FFFFFF</color>
+    <color name="overlay_red_dark">#E6E36565</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_transparent">#33ffffff</color>
+    <color name="white_overlay">#88ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#FA8484</color>
+    <color name="red_dark">#E36565</color>
+    <color name="red_price">#ff5b5c</color>
+    <color name="bg_title">#ff6366</color>
+
+    <color name="bg_name_yellow">#ffd978</color>
+    <color name="bg_name_blue">#54c7fd</color>
+    <color name="bg_name_green">#2dcc70</color>
+
+    <color name="gray_light">#CCCCCC</color>
+    <color name="gray">#666666</color>
+    <color name="gray_middle">#B3B3B3</color>
+    <color name="gray_tinge">#F5F4F2</color>
+    <color name="gray_dark">#333333</color>
+    <color name="gray_darkest">#494848</color>
+    <color name="gray_disable">#DDDDDD</color>
+    <color name="gray_sliver">#999999</color>
+    <color name="gray_home_tab">#b6b6b6</color>
+
+    <color name="main">#2fc2cc</color>
+
+</resources>

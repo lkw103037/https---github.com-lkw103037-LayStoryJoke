@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/main">
+
+        <RelativeLayout
+            android:id="@+id/rl_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_avatar_border"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/user_avatar_witdh_1" />
+
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="52dp"
+                android:layout_toLeftOf="@id/iv_avatar_border"
+                android:background="@mipmap/icon_user_setting" />
+
+            <Button
+                android:id="@+id/btn_message"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="52dp"
+                android:layout_toRightOf="@id/iv_avatar_border"
+                android:background="@mipmap/icon_user_message" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/user_avatar_witdh_2" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                fresco:placeholderImage="@mipmap/test_avatar"
+                fresco:roundAsCircle="true"
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="2dp" />
+
+            <ImageView
+                android:id="@+id/iv_user_avatar_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/sdv_avatar"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/icon_user_avatar_checked" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_avatar"
+            android:layout_centerHorizontal="true"
+            android:text="大话小北"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_big"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_name"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:src="@mipmap/icon_user_job" />
+
+            <TextView
+                android:id="@+id/tv_sex_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_avatar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="8dp"
+                android:text="女 设计师"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:src="@mipmap/icon_user_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_avatar"
+                android:layout_centerHorizontal="true"
+                android:text="北京"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3">
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_publish"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View style="@style/LineVertical" />
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_response"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View style="@style/LineVertical" />
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_fav"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3">
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_follow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View style="@style/LineVertical" />
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_fans"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View style="@style/LineVertical" />
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3">
+
+            <com.lab.joke.view.custom.UserItemView
+                android:id="@+id/c_recently"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View style="@style/LineVertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

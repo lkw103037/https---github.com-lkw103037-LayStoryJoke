@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity"
+    android:orientation="vertical">
+
+    <com.lab.joke.view.custom.TitleView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/record"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="按住    说话"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="点击播放录音" />
+
+        <TextView
+            android:id="@+id/luyin_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/luyin_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

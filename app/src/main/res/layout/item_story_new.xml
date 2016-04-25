@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有爱才有做"
+            android:textColor="@color/gray_dark"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginTop="8dp"
+            android:text="27秒前 瘦姑娘"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_small" />
+
+        <TextView
+            android:id="@+id/tv_response_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_name"
+            android:layout_marginTop="8dp"
+            android:text="1024个回应"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_small" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:src="@mipmap/test_img" />
+
+            <ImageView
+                android:id="@+id/iv_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_voice" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <View style="@style/LineHorizontal" />
+
+</LinearLayout>
